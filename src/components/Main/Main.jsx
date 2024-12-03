@@ -6,7 +6,6 @@ import { useState } from "react"
 export default function Main() {
     const [title, setTitle] = useState('')
     const [newPost, setNewPost] = useState(posts)
-
     const [publishedPosts, setPublishedPosts] = useState(posts.filter((post) => post.published))
     const tags = []
 
@@ -34,7 +33,6 @@ export default function Main() {
     function deletePost(id) {
         setPublishedPosts(publishedPosts.filter(post => post.id !== id))
     }
-
 
     newPost.forEach(post => {
         const postTags = post.tags
@@ -67,12 +65,7 @@ export default function Main() {
                     <div className="row">
                         {publishedPosts.map((post) => (
                             <div key={post.id} className="col">
-                                <Card post={post} />
-                                <button
-                                    onClick={() => deletePost(post.id)}
-                                    className="deleteBtn">
-                                    X
-                                </button>
+                                <Card post={post} onDelete={deletePost} />
                             </div>
                         ))}
                     </div>

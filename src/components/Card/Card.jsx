@@ -1,12 +1,9 @@
 import style from './Card.module.css'
 import placeHolderSrc from '../../assets/placeholder.png'
-import Tags from '../Tags/Tags';
+import Tags from '../Tags/Tags'
 
-export default function Card({ post = {} }) {
-    //console.log('card props:', props)
-
+export default function Card({ post, onDelete }) {
     const { id, title, image, content, tags, published } = post
-
 
     return (
         <div className={style.card}>
@@ -18,8 +15,16 @@ export default function Card({ post = {} }) {
                 <p>{content}</p>
                 <Tags tags={tags} />
                 <br />
-                <button className="btn">LEGGI DI PIU'</button>
+                <div className={style.btn_inline}>
+                    <button className="btn">LEGGI DI PIU'</button>
+                    <button
+                        onClick={() => onDelete(id)}
+                        className={style.deleteBtn}>
+                        X
+                    </button>
+                </div>
             </div>
+
         </div>
     )
 }

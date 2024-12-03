@@ -64,7 +64,7 @@ img {
 }
 
 .btn:hover {
-  background-color: #1b362c;
+  opacity: 80%;
 }
 
 .error {
@@ -97,17 +97,4 @@ img {
 
 .formBtn:hover {
   background-color: rgba(116, 57, 57, 0.712);
-}
-
-.deleteBtn {
-  border: none;
-  background-color: rgb(253, 148, 107);
-  border-radius: 5px;
-  padding: 5px 5px;
-  color: rgb(59, 59, 59);
-  cursor: pointer;
-}
-
-.deleteBtn:hover {
-  background-color: rgba(116, 57, 57, 0.616);
 }
