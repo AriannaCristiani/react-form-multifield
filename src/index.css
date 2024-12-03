@@ -1,0 +1,113 @@
+/* reset */
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: rgb(148, 190, 166);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 25px;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* layout */
+.container {
+  max-width: 1024px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.col {
+  width: 300px;
+}
+
+.btn {
+  color: white;
+  background-color: rgb(36, 138, 90);
+  padding: 5px 5px;
+  border: none;
+  border-radius: 5px;
+  margin: 0px 0px 10px 0px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #1b362c;
+}
+
+.error {
+  opacity: 20%;
+}
+
+.form {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-right: 40px;
+  padding: 25px 0px;
+}
+
+.formText {
+  border: none;
+  background-color: rgb(255, 236, 223);
+  border-radius: 5px;
+  padding: 10px 10px;
+}
+
+.formBtn {
+  border: none;
+  background-color: rgb(253, 148, 107);
+  border-radius: 5px;
+  padding: 10px 10px;
+  color: rgb(59, 59, 59);
+  cursor: pointer;
+}
+
+.formBtn:hover {
+  background-color: rgba(116, 57, 57, 0.712);
+}
+
+.deleteBtn {
+  border: none;
+  background-color: rgb(253, 148, 107);
+  border-radius: 5px;
+  padding: 5px 5px;
+  color: rgb(59, 59, 59);
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  background-color: rgba(116, 57, 57, 0.616);
+}
