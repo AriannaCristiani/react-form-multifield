@@ -42,6 +42,12 @@ img {
   margin: 0 auto;
 }
 
+.container_sm {
+  max-width: 400px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -73,9 +79,8 @@ img {
 
 .form {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
   gap: 10px;
-  margin-right: 40px;
   padding: 25px 0px;
 }
 
@@ -86,6 +91,14 @@ img {
   padding: 10px 10px;
 }
 
+.formSelect {
+  border: none;
+  background-color: rgb(255, 236, 223);
+  border-radius: 5px;
+  padding: 10px 10px;
+  color: rgb(44, 44, 44);
+}
+
 .formBtn {
   border: none;
   background-color: rgb(253, 148, 107);
@@ -93,8 +106,16 @@ img {
   padding: 10px 10px;
   color: rgb(59, 59, 59);
   cursor: pointer;
+  align-self: center;
 }
 
 .formBtn:hover {
   background-color: rgba(116, 57, 57, 0.712);
+}
+
+.form_title {
+  text-align: center;
+  padding: 5px 5px;
+  color: rgba(253, 102, 56, 0.925);
+  text-shadow: rgba(0, 0, 0, 0.521) 2px 1px;
 }

@@ -44,3 +44,9 @@
 .deleteBtn:hover {
     background-color: #361c1b;
 }
+
+.category {
+    margin-top: 5px;
+    display: flex;
+    gap: 5px;
+}

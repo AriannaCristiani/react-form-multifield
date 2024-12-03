@@ -11,16 +11,18 @@ export const posts = [
         image: tulipaniSrc,
         content:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit animi unde quasi enim non esse ratione voluptas voluptate, officiis veritatis magni blanditiis possimus nobis cum id inventore corporis deserunt hic.',
-        tags: ['html', 'css'],
+        category: 'Fiori',
+        tags: ['fiori', 'piante'],
         published: true,
     },
     {
         id: 2,
-        title: 'Papaveri',
+        title: 'Salice',
         image: undefined,
         content:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit animi unde quasi enim non esse ratione voluptas voluptate, officiis veritatis magni blanditiis possimus nobis cum id inventore corporis deserunt hic.',
-        tags: ['js', 'css'],
+        category: 'Alberi',
+        tags: ['giardino', 'piante'],
         published: false,
     },
     {
@@ -29,16 +31,18 @@ export const posts = [
         image: gigliSrc,
         content:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit animi unde quasi enim non esse ratione voluptas voluptate, officiis veritatis magni blanditiis possimus nobis cum id inventore corporis deserunt hic.',
-        tags: ['js', 'php'],
+        category: 'Fiori',
+        tags: ['giardino', 'esterno'],
         published: true,
     },
     {
         id: 4,
-        title: 'Rose',
+        title: 'Monstera',
         image: undefined,
         content:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit animi unde quasi enim non esse ratione voluptas voluptate, officiis veritatis magni blanditiis possimus nobis cum id inventore corporis deserunt hic.',
-        tags: ['html'],
+        category: 'piante',
+        tags: ['fiori'],
         published: true,
     },
     {
@@ -47,7 +51,8 @@ export const posts = [
         image: girasoliSrc,
         content:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit animi unde quasi enim non esse ratione voluptas voluptate, officiis veritatis magni blanditiis possimus nobis cum id inventore corporis deserunt hic.',
-        tags: ['html'],
+        category: 'Fiori',
+        tags: ['fiori'],
         published: true,
     },
     {
@@ -56,7 +61,8 @@ export const posts = [
         image: crisantemiSrc,
         content:
             'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit animi unde quasi enim non esse ratione voluptas voluptate, officiis veritatis magni blanditiis possimus nobis cum id inventore corporis deserunt hic.',
-        tags: ['html'],
+        category: 'Fiori',
+        tags: ['fiori', 'piante'],
         published: false,
     },
 ]

@@ -18,18 +18,22 @@
     opacity: 70%;
 }
 
-.html {
+.fiori {
     background-color: rgb(240, 116, 85);
 }
 
-.js {
+.piante {
     background-color: rgb(255, 196, 0);
 }
 
-.css {
+.giardino {
     background-color: rgb(117, 209, 252);
 }
 
-.php {
+.esterno {
     background-color: rgb(0, 140, 221);
+}
+
+.react {
+    background-color: #61dafb;
 }
