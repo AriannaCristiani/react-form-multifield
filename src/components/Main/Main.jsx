@@ -4,7 +4,18 @@ import Tags from '../Tags/Tags.jsx'
 import { useState } from "react"
 
 export default function Main() {
-    const [title, setTitle] = useState('')
+
+    const [formData, setFormData] = useState({
+        title: '',
+        image: '',
+        content: '',
+        category: '',
+        tags: '',
+        published: true
+    });
+
+    //const [title, setTitle] = useState('')
+
     const [newPost, setNewPost] = useState(posts)
     const [publishedPosts, setPublishedPosts] = useState(posts.filter((post) => post.published))
     const tags = []
@@ -54,9 +65,8 @@ export default function Main() {
                         <input
                             className="formText"
                             type="text"
-                            onChange={(event) => setTitle(event.target.value)}
                             placeholder="Inserisci il titolo del Post"
-                            value={title}
+                            value={formData.title}
                         />
                         <input className="formBtn" type="submit" value={'INVIA'} />
                     </form>
