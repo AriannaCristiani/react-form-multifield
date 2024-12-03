@@ -4,11 +4,10 @@ import Tags from '../Tags/Tags.jsx'
 import { useState } from "react"
 
 export default function Main() {
-    const [title, setTitle] = useState('Peonie')
+    const [title, setTitle] = useState('')
     const [newPost, setNewPost] = useState(posts)
 
-    // Ottieni solo i post pubblicati
-    const publishedPosts = newPost.filter((post) => post.published)
+    const [publishedPosts, setPublishedPosts] = useState(posts.filter((post) => post.published))
     const tags = []
 
     function addPost(event) {
@@ -27,16 +26,16 @@ export default function Main() {
             published: true,
         }
 
-        setNewPost(prevPosts => [...prevPosts, addedPost])
+        setPublishedPosts([...publishedPosts, addedPost])
+        setTitle('')
         console.log('stai aggiungendo un nuovo post')
     }
 
-    // Funzione per eliminare un post
-    function deletePost(postId) {
-        setNewPost(prevPosts => prevPosts.filter(post => post.id !== postId))
+    function deletePost(id) {
+        setPublishedPosts(publishedPosts.filter(post => post.id !== id))
     }
 
-    // Estrai i tags dai post
+
     newPost.forEach(post => {
         const postTags = post.tags
         postTags.forEach((tag) => {
@@ -71,9 +70,8 @@ export default function Main() {
                                 <Card post={post} />
                                 <button
                                     onClick={() => deletePost(post.id)}
-                                    className="deleteBtn"
-                                >
-                                    ELIMINA
+                                    className="deleteBtn">
+                                    X
                                 </button>
                             </div>
                         ))}
