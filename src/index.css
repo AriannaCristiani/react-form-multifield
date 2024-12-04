@@ -119,3 +119,9 @@ img {
   color: rgba(253, 102, 56, 0.925);
   text-shadow: rgba(0, 0, 0, 0.521) 2px 1px;
 }
+
+.page_tags {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

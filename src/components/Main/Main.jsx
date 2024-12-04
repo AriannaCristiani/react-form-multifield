@@ -1,6 +1,7 @@
 import Card from "../Card/Card";
-import posts from '../../posts.jsx';
-import { useState } from "react";
+import Tags from '../Tags/Tags.jsx';
+import initialPosts from '../../posts.jsx';
+import { useEffect, useState } from "react";
 
 const initialFormData = {
     title: '',
@@ -14,49 +15,56 @@ const initialFormData = {
 export default function Main() {
 
     const [formData, setFormData] = useState(initialFormData);
-    const [newPost, setNewPost] = useState(posts);
-    const [publishedPosts, setPublishedPosts] = useState(posts.filter((post) => post.published));
+    const [posts, setPosts] = useState(initialPosts);
+    const [publishedPosts, setPublishedPosts] = useState([]);
+    const [tags, setTags] = useState([]);
 
-    function handleFormData(event) {
-        console.log(event.target.name, event.target.value);
 
-        const key = event.target.name;
-        const value = event.target.value;
+    useEffect(() => {
+        setPublishedPosts(posts.filter((post) => post.published))
 
-        setFormData(prevState => ({
-            ...prevState,
-            [key]: value
-        }));
-    }
+        const tagsItems = []
+        posts.forEach(post => {
+            const postTags = post.tags
+            console.log(postTags)
+
+            postTags.forEach((tag) => {
+                if (!tagsItems.includes(tag)) {
+                    tagsItems.push(tag)
+                }
+            })
+        })
+        setTags(tagsItems)
+
+    }, [posts])
+
+
 
     function addPost(event) {
-        event.preventDefault();
+        event.preventDefault()
 
-        const { title, image, content, category, tags: tagString, published } = formData;
-        const newTags = tagString.split(',').map(tag => tag.trim()).filter(tag => tag !== '');
-
-        if (title.trim() === '') return;
-
-        const addedPost = {
+        const post = {
             id: Date.now(),
-            title,
-            image: image || undefined,
-            content: content || '',
-            category,
-            tags: newTags,
-            published,
-        };
-
-        setPublishedPosts([...publishedPosts, addedPost]);
-        setNewPost([...publishedPosts, addedPost]);
+            ...formData,
+            tags: formData.tags.split(',').map(tag => tag.trim())
+        }
+        setPosts([...posts, post])
         setFormData(initialFormData)
 
-        console.log('stai aggiungendo un nuovo post');
     }
 
     function deletePost(id) {
-        setPublishedPosts(publishedPosts.filter(post => post.id !== id));
-        setNewPost(publishedPosts.filter(post => post.id !== id));
+        setPublishedPosts(publishedPosts.filter(post => post.id !== id))
+
+    }
+
+    function handleFormData(event) {
+        const { name, value, type, checked } = event.target
+
+        setFormData({
+            ...formData,
+            [name]: type === 'checkbox' ? checked : value
+        })
     }
 
 
@@ -109,8 +117,20 @@ export default function Main() {
                             value={formData.tags}
                             onChange={handleFormData}
                         />
-                        <input className="formBtn" type="submit" value={'INVIA'} />
+                        <input
+                            onChange={handleFormData}
+                            type="checkbox"
+                            checked={formData.published}
+                            id='published'
+                            name='published' />
+                        <input
+                            className="formBtn"
+                            type="submit"
+                            value={'INVIA'} />
                     </form>
+                </div>
+                <div className="container">
+                    <Tags className='page_tags' tags={tags} />
                 </div>
                 <div className="container">
                     <div className="row">
